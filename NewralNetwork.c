@@ -7,9 +7,10 @@
 #define HIDDEN_LAYER_AMOUNT 2
 #define HIDDEN_LAYER_SIZE 10
 
+
 typedef struct
 {
-    double input[6];
+    double inputs[INPUT_AMOUNT];
     double hiddenParams[HIDDEN_LAYER_AMOUNT][HIDDEN_LAYER_SIZE];
 } NewralNetwork;
 
