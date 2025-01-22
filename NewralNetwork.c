@@ -30,10 +30,7 @@ double Activate(double x)
 /// 損失関数(交差エントロピー法)
 double CalcurateLose(int answer, double* probability, int length)
 {
-    double lose = 0;
-    for (int i = 0; i < length; i++) {
-        /// log0の発生を防ぐため、1e-12を加算
-        lose -= Log2(answer - probablity[i] + 1e-12);
-    }
+    /// log0の発生を防ぐため、1e-12を加算
+    double lose = -Log2(probabloty[answer] + 1e-12);
     return lose;
 }
