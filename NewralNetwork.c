@@ -14,8 +14,25 @@ typedef struct
     double hiddenParams[HIDDEN_LAYER_AMOUNT][HIDDEN_LAYER_SIZE];
 } NewralNetwork;
 
+double Log2(double x)
+{
+    /// マクローリン展開に基づく近似式
+    return (x - x*x/2 + x*x*x/3) / 0.693;
+}
+
 /// 活性化関数
 double Activate(double x)
 {
     
+}
+
+/// 損失関数(交差エントロピー法)
+double CalcurateLose(int answer, double* probability, int length)
+{
+    double lose = 0;
+    for (int i = 0; i < length; i++) {
+        /// log0の発生を防ぐため、1e-12を加算
+        lose -= Log2(answer - probablity[i] + 1e-12);
+    }
+    return lose;
 }
