@@ -17,7 +17,8 @@ typedef struct
 double Log2(double x)
 {
     /// マクローリン展開に基づく近似式
-    return (x - x*x/2 + x*x*x/3) / 0.693;
+    double t = x - 1;
+    return (t - t*t/2 + t*t*t/3) / 0.693;
 }
 
 /// 活性化関数
