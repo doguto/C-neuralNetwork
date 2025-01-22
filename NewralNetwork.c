@@ -25,7 +25,7 @@ void SetInputs(NewralNetwork* network, double* inputs, int length)
 {
     for (int i = 0; i < length; i++)
     {
-        network->inputs[i] = inputs[i];
+        network->inputs[i] = *inputs[i];
     }
 }
 
