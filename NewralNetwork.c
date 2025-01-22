@@ -21,6 +21,14 @@ double Log2(double x)
     return (t - t*t/2 + t*t*t/3) / 0.693;
 }
 
+void SetInputs(NewralNetwork* network, double* inputs, int length)
+{
+    for (int i = 0; i < length; i++)
+    {
+        network->inputs[i] = inputs[i];
+    }
+}
+
 /// 活性化関数
 double Activate(double x)
 {
@@ -34,3 +42,6 @@ double CalcurateLose(int answer, double* probability, int length)
     double lose = -Log2(probabloty[answer] + 1e-12);
     return lose;
 }
+
+
+
